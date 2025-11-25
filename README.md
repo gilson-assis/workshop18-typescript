@@ -2,7 +2,7 @@
 
 Pré-requisitos:
 
-* .NET 8 SDK instalado
+* .NET 8 SDK instalado (no mínimo)
 
 Comandos básicos:
 
