@@ -34,3 +34,21 @@ export type Workshop = {
 
 
 export type WorkshopList = Workshop[];
+
+export type NewWorkshop = {
+  title: string;
+  description: string;
+  startAt: string;   // ISO
+  endAt: string;     // ISO
+  isOnline: boolean;
+  location?: string | null;
+  capacity?: number; // opcional
+};
+
+// Assinatura (implemente a chamada POST):
+export async function createWorkshop(payload: NewWorkshop): Promise<Workshop> {
+  // TODO: implementar com axios.post<Workshop>(`${API_BASE}${WORKSHOPS_PATH}`, payload)
+  // Dica: trate somente erros no chamador (main.ts) para centralizar UX (toasts/meta)
+  throw new Error('Not implemented');
+}
+

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Busca de Workshops</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="h-full text-slate-100 antialiased">
+    <main class="max-w-6xl mx-auto px-4 py-12">
+      <header class="mb-8">
+        <h1 class="text-3xl font-semibold tracking-tight">Busca de Workshops</h1>
+      </header>
+      <section class="backdrop-blur-md bg-white/5 ring-1 ring-white/10 rounded-2xl p-6 shadow-lg">
+        <form id="search-form" class="flex flex-col sm:flex-row gap-3">
+          <input id="q" name="q"
+            class="flex-1 rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-2 placeholder:text-slate-500
+                   focus:outline-none focus:ring-2 focus:ring-sky-500"
+            placeholder="Buscar por título..." autocomplete="off" />
+          <button type="submit"
+            class="rounded-xl px-5 py-2 font-medium bg-sky-600 hover:bg-sky-500 transition
+                   shadow-[0_8px_30px_rgb(2,132,199,0.35)]">
+            Buscar
+          </button>
+        </form>
+
+        <p id="meta" class="text-sm text-slate-400 mt-3"></p>
+
+        <div id="results"
+             class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4"></div>
+      </section>      
+      <!--Adicionar o Form de inserção aqui-->
+      <section class="mt-10 backdrop-blur-md bg-white/5 ring-1 ring-white/10 rounded-2xl p-6 shadow-lg">
+        <h2 class="text-xl font-semibold mb-4">Cadastrar novo Workshop</h2>
+        <form id="add-form" class="grid gap-3 md:grid-cols-2">
+          <input id="title" name="title" class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-2"
+           placeholder="Título" required />
+          <input id="capacity" name="capacity" type="number" min="1" class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-2"
+           placeholder="Capacidade" />
+          <textarea id="description" name="description" type="text" class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-2 col-span-2" placeholder="Descrição"></textarea>
+          <label class="flex items-center gap-2">
+             <input id="isOnline" name="isOnline" type="checkbox" class="accent-sky-500">
+             <span>Online</span>
+          </label>
+          <input id="location" name="location" class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-2"
+                 placeholder="Local (se presencial)"/>
+
+         <input id="startAt" name="startAt" type="datetime-local" class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-2" required />
+         <input id="endAt"   name="endAt"   type="datetime-local" class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-2" required />
+
+         <button type="submit"
+                 class="md:col-span-2 mt-2 rounded-xl px-5 py-2 font-medium bg-emerald-600 hover:bg-emerald-500 transition">
+                 Inserir
+         </button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
