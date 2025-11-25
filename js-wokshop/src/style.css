@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/*Paleta e "vibe" moderna (cores frias + vidro) apenas com utilities*/
+:root {
+    color-scheme: dark;
+}
